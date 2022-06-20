@@ -1,20 +1,12 @@
 import React from "react";
-import Login from "./Login";
+import Form from "./Form";
 
-var loggedIn = true; 
-
-function Display(){
-    if(loggedIn){
-      return <h1>Hello</h1>; 
-    }else{
-      return <Login />; 
-    }
-}
+var userIsRegistered = true;
 
 function App() {
   return (
     <div className="container">
-      {Display()}
+      {(userIsRegistered && <Form buttonValue = "Login"/>) || (<Form buttonValue = "Register"/>)}
     </div>
   );
 }
